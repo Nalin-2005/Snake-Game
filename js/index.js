@@ -57,7 +57,7 @@ function gameEngine() {
         score += 1;
         if (score > hiscoreval) {
             hiscoreval = score;
-            localStorage.setItem("High Score", JSON.stringify(hiscoreval));
+            localStorage.setItem("hiscore", hiscoreval);
             hiscoreBox.innerHTML = "High Score: " + hiscoreval;
         }
         scoreBox.innerHTML = "Score: " + score;
@@ -106,9 +106,9 @@ musicSound.play();
 let hiscore = localStorage.getItem("hiscore");
 if (hiscore === null) {
     hiscoreval = 0;
-    localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+    localStorage.setItem("hiscore", hiscoreval)
 } else {
-    hiscoreval = JSON.parse(hiscore);
+    hiscoreval = Number(hiscore);
     hiscoreBox.innerHTML = "High Score: " + hiscore;
 }
 
